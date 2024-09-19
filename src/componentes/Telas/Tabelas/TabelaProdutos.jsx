@@ -4,6 +4,16 @@ import { Button, Container, Table } from "react-bootstrap";
 
 export default function TabelaProdutos(props) {
 
+    const produtoPadrao = {
+        "codigo":0,
+        "descricao":"",
+        "precoCusto":0,
+        "precoVenda":0,
+        "qtdEstoque":0,
+        "urlImagem":"",
+        "dataValidade":""
+    };
+
     function excluirProduto(produto){
         if(window.confirm("Deseja realmente excluir o produto " + produto.descricao)){
             props.setListaProdutos(props.listaDeProdutos.filter(
@@ -27,6 +37,7 @@ export default function TabelaProdutos(props) {
             <Container>
                 <Button className="mb-3" variant="primary"
                     onClick={() => {
+                        props.setProdutoEdit(produtoPadrao);
                         props.setExibirTabela(false);
                     }}>
                     Adicionar

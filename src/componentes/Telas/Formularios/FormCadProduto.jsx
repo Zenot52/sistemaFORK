@@ -28,7 +28,7 @@ export default function FormCadProdutos(props) {
                 props.setModoEdicao(false);
                 props.setExibirTabela(true);
             }else{
-                props.setProdutoEdit([...props.listaDeProdutos, props.produtoEdit]);
+                props.setListaProdutos([...props.listaDeProdutos, props.produtoEdit]);
                 props.setExibirTabela(true);  
             }
             
